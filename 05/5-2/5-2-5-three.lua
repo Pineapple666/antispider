@@ -6,8 +6,5 @@ function main(splash)
     -- 在搜索框中输入Python
     splash:send_text('Python')
     splash:wait(0.2)
-    print(splash:png())
---    return {
---        png = splash:png()
---    }
+    return {png = splash:png()}
 end

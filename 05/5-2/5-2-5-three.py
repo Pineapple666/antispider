@@ -23,6 +23,11 @@ headers = {'content-type': 'application/json'}
 data = json.dumps({'lua_source': lua_script})
 res = requests.post(splash_api, data=data, headers=headers)
 res_json = res.json()
-print(res_json.get('png'))
-# with open('ituring_splash.png', 'wb') as file:
-#     file.write(res_json.get('png'))
+png_str = res_json.get('png')
+
+png_api = 'data:image/png;base64,' + png_str
+
+res = requests.get(url=png_api)
+
+with open('ituring_splash.png', 'wb') as file:
+    file.write(res.content())

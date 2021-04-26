@@ -4,7 +4,5 @@ function main(splash)
     -- 等待0.5秒钟
     splash:wait(0.5)
     title = splash:select('h1 > a'):text()
-    return {
-        result = title
-    }
+    return {result = title}
 end
