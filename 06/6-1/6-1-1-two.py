@@ -8,7 +8,7 @@ except ImportError:
     import Image
 import pytesseract
 
-url = 'http://www.porters.vip/confusion/recruit.html'
+url = 'http://localhost/confusion/recruit.html'
 resp = requests.get(url)
 sel = Selector(resp.text)
 # 从响应正文中提取图片名称
@@ -20,4 +20,5 @@ image_body = requests.get(image_url).content
 # 使用Image.open打开图片字节流，得到图片对象
 image_stream = Image.open(io.BytesIO(image_body))
 # 使用光学字符识别从图片对象中读取文字并打印输出结果
-print(pytesseract.image_to_string(image_stream))
+s = pytesseract.image_to_string(image_stream).strip()
+print(s)

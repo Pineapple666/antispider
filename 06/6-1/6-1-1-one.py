@@ -1,6 +1,6 @@
 import requests
 from parsel import Selector
-url = 'http://www.porters.vip/confusion/recruit.html'
+url = 'http://localhost/confusion/recruit.html#'
 # 向目标网址发起请求
 resp = requests.get(url)
 # 使用响应正文初始化Selector
